@@ -1,0 +1,4 @@
+CREATE TABLE car (
+    id UUID NOT NULL PRIMARY KEY,
+    namee VARCHAR (100) NOT NULL
+)
