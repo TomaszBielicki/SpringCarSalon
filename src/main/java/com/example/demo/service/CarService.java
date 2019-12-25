@@ -20,4 +20,9 @@ public class CarService {
     public List<Car> getallCars() {
         return carDataAccess.selectAllCars();
     }
+
+    public int addNewCar(Car car) {
+        return carDataAccess.insert(car);
+
+    }
 }

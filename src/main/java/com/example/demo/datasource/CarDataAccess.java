@@ -1,6 +1,7 @@
 package com.example.demo.datasource;
 
 import com.example.demo.model.Car;
+import com.example.demo.utils.CarHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -30,6 +31,17 @@ public class CarDataAccess {
 
                  return new Car(UUID.fromString(car_id), car_name);
                 }
+
+        );
+    }
+
+    public int insert(Car car) {
+        final String sql = "INSERT INTO car (id, namee)" +
+                "VALUES (?, ?)";
+
+       return jdbcTemplate.update(
+                sql,
+                CarHelper.getCar(car)
 
         );
     }
