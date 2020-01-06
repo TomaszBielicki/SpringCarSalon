@@ -15,8 +15,8 @@ public class CarDataAccess {
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public CarDataAccess(JdbcTemplate jdbcTemplateq) {
-        this.jdbcTemplate = jdbcTemplateq;
+    public CarDataAccess(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<Car> selectAllCars(){

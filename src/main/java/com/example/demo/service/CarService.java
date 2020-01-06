@@ -17,7 +17,7 @@ public class CarService {
         this.carDataAccess = carDataAccess;
     }
 
-    public List<Car> getallCars() {
+    public List<Car> getAllCars() {
         return carDataAccess.selectAllCars();
     }
 
