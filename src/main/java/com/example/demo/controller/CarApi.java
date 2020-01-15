@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/car-api")
@@ -23,8 +24,17 @@ public class CarApi {
        return carService.getAllCars();
     }
 
-    @PostMapping
+    @PostMapping("/add_new_car")
     public int addNewCar (@RequestBody Car car){
+        UUID carId = UUID.randomUUID();
+        car.setCarID(carId);
         return carService.addNewCar(car);
     }
+
+    @GetMapping("/{modelName}")
+    public List<Car> findCarByModel(@PathVariable("modelName") String modelName) {
+        return carService.findCarByModel(modelName);
+    }
+
+    
 }

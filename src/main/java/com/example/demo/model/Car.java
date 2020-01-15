@@ -1,31 +1,53 @@
 package com.example.demo.model;
 
+import com.example.demo.utils.ModelCar;
+import com.example.demo.utils.TypeCar;
+
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Car {
 
-    public Car(UUID carID, String name) {
-        this.carID = carID;
-        this.name = name;
-    }
 
     private UUID carID;
-    private String name;
+    final private ModelCar modelCar;
+    final private LocalDate productionDate;
+    final private TypeCar typeCar;
 
 
-    public String getName() {
-        return name;
+//    public Car(UUID carID, ModelCar modelCar, LocalDate productionDate, TypeCar typeCar) {
+//        this.carID = carID;
+//        this.modelCar = modelCar;
+//        this.productionDate = productionDate;
+//        this.typeCar = typeCar;
+//    }
+
+    public Car(ModelCar modelCar, LocalDate productionDate, TypeCar typeCar) {
+        this.modelCar = modelCar;
+        this.productionDate = productionDate;
+        this.typeCar = typeCar;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public UUID getCarID() {
         return carID;
+    }
+
+    public LocalDate getProductionDate() {
+        return productionDate;
+    }
+
+    public ModelCar getModelCar() {
+        return modelCar;
+    }
+
+    public TypeCar getTypeCar() {
+        return typeCar;
     }
 
     public void setCarID(UUID carID) {
         this.carID = carID;
     }
 }
+
+

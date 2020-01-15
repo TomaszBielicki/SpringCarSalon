@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.datasource.CarDataAccess;
 import com.example.demo.model.Car;
+import com.example.demo.utils.ModelCar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,9 @@ public class CarService {
     public int addNewCar(Car car) {
         return carDataAccess.insert(car);
 
+    }
+
+    public List <Car> findCarByModel(String modelName){
+        return carDataAccess.findCarByModel(modelName);
     }
 }
